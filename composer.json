@@ -12,6 +12,7 @@
         "encore/laravel-admin": "*",
         "fideloper/proxy": "~3.3",
         "intervention/image": "*",
+        "laravel-admin-ext/helpers": "^1.0",
         "laravel/framework": "5.5.37",
         "laravel/tinker": "~1.0",
         "tymon/jwt-auth": "0.5.*"
