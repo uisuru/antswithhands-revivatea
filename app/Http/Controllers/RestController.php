@@ -414,7 +414,6 @@ class RestController extends ApiController
                     'gross_amount' => $data->gross_amount,
                     'discount' => $data->discount,
                     'net_amount' => $data->net_amount,
-
                 );
             }
 

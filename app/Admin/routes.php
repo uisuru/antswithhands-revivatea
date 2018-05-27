@@ -42,6 +42,9 @@ Route::group([
     $router->resource('auth/packages', 'PackagesController');
     $router->resource('auth/core_configuration', 'CoreConfigurationController');
     $router->resource('auth/invoices', 'InvoiceController');
+    $router->post('/auth/invoices/create', 'InvoiceController@submitPost')->name('post-invoice');
+    $router->get('/auth/invoice/items/{id}', 'InvoiceController@items');
+    $router->resource('auth/invoice_item', 'InvoiceController');
 
     /*$router->get('auth/grn', 'GrnController@index');
     $router->post('/auth/grn/create', 'GrnController@submitPost')->name('post-grn');*/

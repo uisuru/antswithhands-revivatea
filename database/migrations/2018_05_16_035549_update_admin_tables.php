@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateAllDatabases extends Migration
+class UpdateAdminTables extends Migration
 {
     /**
      * Run the migrations.
@@ -114,6 +114,289 @@ class UpdateAllDatabases extends Migration
             )
         );
         DB::table('admin_menu')->insert(//Insert into admin_menu table
+            array(
+                ['id' => '1',
+                    'parent_id' => '0',
+                    'order' => '1',
+                    'title' => 'Index',
+                    'icon' => 'fa-bar-chart',
+                    'uri' => '/',
+                    'created_at' => date_create()],
+
+                ['id' => '2',
+                    'parent_id' => '0',
+                    'order' => '2',
+                    'title' => 'Admin',
+                    'icon' => 'fa-tasks',
+                    'uri' => null,
+                    'created_at' => date_create()],
+
+                ['id' => '3',
+                    'parent_id' => '2',
+                    'order' => '3',
+                    'title' => 'Users',
+                    'icon' => 'fa-users',
+                    'uri' => 'auth/users',
+                    'created_at' => date_create()],
+
+                ['id' => '4',
+                    'parent_id' => '2',
+                    'order' => '4',
+                    'title' => 'Roles',
+                    'icon' => 'fa-user',
+                    'uri' => 'auth/roles',
+                    'created_at' => date_create()],
+
+                ['id' => '5',
+                    'parent_id' => '2',
+                    'order' => '5',
+                    'title' => 'Permission',
+                    'icon' => 'fa-ban',
+                    'uri' => 'auth/permissions',
+                    'created_at' => date_create()],
+
+                ['id' => '6',
+                    'parent_id' => '2',
+                    'order' => '6',
+                    'title' => 'Menu',
+                    'icon' => 'fa-bars',
+                    'uri' => 'auth/menu',
+                    'created_at' => date_create()],
+
+                ['id' => '7',
+                    'parent_id' => '2',
+                    'order' => '7',
+                    'title' => 'Operation log',
+                    'icon' => 'fa-history',
+                    'uri' => 'auth/logs',
+                    'created_at' => date_create()],
+
+                ['id' => '8',
+                    'parent_id' => '0',
+                    'order' => '13',
+                    'title' => 'System',
+                    'icon' => 'fa-toggle-on',
+                    'uri' => null,
+                    'created_at' => date_create()],
+
+                ['id' => '9',
+                    'parent_id' => '15',
+                    'order' => '15',
+                    'title' => 'Currency',
+                    'icon' => 'fa-dollar',
+                    'uri' => 'auth/currency',
+                    'created_at' => date_create()],
+
+                ['id' => '10',
+                    'parent_id' => '15',
+                    'order' => '16',
+                    'title' => 'Price List',
+                    'icon' => 'fa-list',
+                    'uri' => 'auth/pricelists',
+                    'created_at' => date_create()],
+
+                ['id' => '11',
+                    'parent_id' => '15',
+                    'order' => '17',
+                    'title' => 'Tax',
+                    'icon' => 'fa-percent',
+                    'uri' => 'auth/tax',
+                    'created_at' => date_create()],
+
+                ['id' => '12',
+                    'parent_id' => '15',
+                    'order' => '18',
+                    'title' => 'Payment Terms',
+                    'icon' => 'fa-align-justify',
+                    'uri' => 'auth/paymentterms',
+                    'created_at' => date_create()],
+
+                ['id' => '13',
+                    'parent_id' => '15',
+                    'order' => '19',
+                    'title' => 'Payment Methods',
+                    'icon' => 'fa-bars',
+                    'uri' => 'auth/paymentmethods',
+                    'created_at' => date_create()],
+
+                ['id' => '14',
+                    'parent_id' => '15',
+                    'order' => '20',
+                    'title' => 'Stock Adj. Reasons',
+                    'icon' => 'fa-bars',
+                    'uri' => 'auth/stockadjustmentreasons',
+                    'created_at' => date_create()],
+
+                ['id' => '15',
+                    'parent_id' => '8',
+                    'order' => '14',
+                    'title' => 'Configuration',
+                    'icon' => 'fa-bars',
+                    'uri' => null,
+                    'created_at' => date_create()],
+
+                ['id' => '16',
+                    'parent_id' => '15',
+                    'order' => '23',
+                    'title' => 'Customer',
+                    'icon' => 'fa-home',
+                    'uri' => 'auth/company',
+                    'created_at' => date_create()],
+
+                ['id' => '17',
+                    'parent_id' => '22',
+                    'order' => '0',
+                    'title' => 'Warehouse',
+                    'icon' => 'fa-stop-circle',
+                    'uri' => 'auth/warehouse',
+                    'created_at' => date_create()],
+
+                ['id' => '18',
+                    'parent_id' => '15',
+                    'order' => '21',
+                    'title' => 'Suppliers',
+                    'icon' => 'fa-bars',
+                    'uri' => 'auth/suppliers',
+                    'created_at' => date_create()],
+
+                ['id' => '19',
+                    'parent_id' => '8',
+                    'order' => '24',
+                    'title' => 'Product Configuration',
+                    'icon' => 'fa-bars',
+                    'uri' => null,
+                    'created_at' => date_create()],
+
+                ['id' => '20',
+                    'parent_id' => '19',
+                    'order' => '28',
+                    'title' => 'Product Types',
+                    'icon' => 'fa-bars',
+                    'uri' => 'auth/producttypes',
+                    'created_at' => date_create()],
+
+                ['id' => '21',
+                    'parent_id' => '19',
+                    'order' => '27',
+                    'title' => 'Brands',
+                    'icon' => 'fa-bars',
+                    'uri' => 'auth/brands',
+                    'created_at' => date_create()],
+
+                ['id' => '22',
+                    'parent_id' => '19',
+                    'order' => '26',
+                    'title' => 'Category',
+                    'icon' => 'fa-bars',
+                    'uri' => 'auth/category',
+                    'created_at' => date_create()],
+
+                ['id' => '23',
+                    'parent_id' => '19',
+                    'order' => '25',
+                    'title' => 'Products',
+                    'icon' => 'fa-bars',
+                    'uri' => 'auth/products',
+                    'created_at' => date_create()],
+
+                ['id' => '24',
+                    'parent_id' => '0',
+                    'order' => '29',
+                    'title' => 'Inventory',
+                    'icon' => 'fa-cubes',
+                    'uri' => null,
+                    'created_at' => date_create()],
+
+                ['id' => '25',
+                    'parent_id' => '24',
+                    'order' => '31',
+                    'title' => 'Manage GRN',
+                    'icon' => 'fa-bars',
+                    'uri' => 'auth/grn',
+                    'created_at' => date_create()],
+
+                ['id' => '26',
+                    'parent_id' => '24',
+                    'order' => '32',
+                    'title' => 'Stock Transfer',
+                    'icon' => 'fa-bars',
+                    'uri' => 'auth/stock_transfer',
+                    'created_at' => date_create()],
+
+                ['id' => '27',
+                    'parent_id' => '0',
+                    'order' => '33',
+                    'title' => 'Reports',
+                    'icon' => 'fa-bars',
+                    'uri' => null,
+                    'created_at' => date_create()],
+
+                ['id' => '28',
+                    'parent_id' => '27',
+                    'order' => '34',
+                    'title' => 'Bin Card',
+                    'icon' => 'fa-bars',
+                    'uri' => 'auth/bincard',
+                    'created_at' => date_create()],
+
+                ['id' => '29',
+                    'parent_id' => '27',
+                    'order' => '35',
+                    'title' => 'Stock',
+                    'icon' => 'fa-bars',
+                    'uri' => 'auth/stock',
+                    'created_at' => date_create()],
+
+                ['id' => '30',
+                    'parent_id' => '24',
+                    'order' => '30',
+                    'title' => 'Invoices',
+                    'icon' => 'fa-dollar',
+                    'uri' => 'auth/invoices',
+                    'created_at' => date_create()],
+
+                ['id' => '31',
+                    'parent_id' => '2',
+                    'order' => '8',
+                    'title' => 'Invoices',
+                    'icon' => 'fa-dollar',
+                    'uri' => 'auth/invoices',
+                    'created_at' => date_create()],
+
+                ['id' => '32',
+                    'parent_id' => '31',
+                    'order' => '9',
+                    'title' => 'Invoices',
+                    'icon' => 'fa-dollar',
+                    'uri' => 'auth/invoices',
+                    'created_at' => date_create()],
+
+                ['id' => '33',
+                    'parent_id' => '31',
+                    'order' => '10',
+                    'title' => 'Invoices',
+                    'icon' => 'fa-dollar',
+                    'uri' => 'auth/invoices',
+                    'created_at' => date_create()],
+
+                ['id' => '34',
+                    'parent_id' => '31',
+                    'order' => '11',
+                    'title' => 'Invoices',
+                    'icon' => 'fa-dollar',
+                    'uri' => 'auth/invoices',
+                    'created_at' => date_create()],
+
+                ['id' => '35',
+                    'parent_id' => '31',
+                    'order' => '12',
+                    'title' => 'Invoices',
+                    'icon' => 'fa-dollar',
+                    'uri' => 'auth/invoices',
+                    'created_at' => date_create()],
+            )
+        );
+        /*DB::table('admin_menu')->insert(//Insert into admin_menu table//old one
             array(
                 ['id' => '1',
                     'parent_id' => '0',
@@ -347,7 +630,7 @@ class UpdateAllDatabases extends Migration
                     'uri' => 'auth/stock',
                     'created_at' => date_create()],
             )
-        );
+        );*/
         DB::table('admin_role_menu')->insert(//Insert into admin_role_menu table
             array(
                 ['role_id' => '1',
@@ -505,6 +788,87 @@ class UpdateAllDatabases extends Migration
                     'created_at' => date_create()],
             )
         );
+        DB::table('admin_role_permissions')->insert(//Insert into admin_role_permissions table
+            array(
+                ['role_id' => '1',
+                    'permission_id' => '1',
+                    'created_at' => date_create()],
+                ['role_id' => '2',
+                    'permission_id' => '2',
+                    'created_at' => date_create()],
+                ['role_id' => '2',
+                    'permission_id' => '3',
+                    'created_at' => date_create()],
+                ['role_id' => '2',
+                    'permission_id' => '4',
+                    'created_at' => date_create()],
+                ['role_id' => '2',
+                    'permission_id' => '6',
+                    'created_at' => date_create()],
+                ['role_id' => '2',
+                    'permission_id' => '7',
+                    'created_at' => date_create()],
+                ['role_id' => '2',
+                    'permission_id' => '8',
+                    'created_at' => date_create()],
+                ['role_id' => '2',
+                    'permission_id' => '9',
+                    'created_at' => date_create()],
+                ['role_id' => '2',
+                    'permission_id' => '10',
+                    'created_at' => date_create()],
+            )
+        );
+        DB::table('admin_role_users')->insert(//Insert into admin_role_users table
+            array(
+                ['role_id' => '1',
+                    'user_id' => '1',
+                    'created_at' => date_create()],
+                ['role_id' => '2',
+                    'user_id' => '2',
+                    'created_at' => date_create()],
+            )
+        );
+        DB::table('admin_roles')->insert(//Insert into admin_roles table
+            array(
+                ['id' => '1',
+                    'name' => 'Administrator',
+                    'slug' => 'administrator',
+                    'created_at' => date_create()],
+
+                ['id' => '2',
+                    'name' => 'Reviva Administrator',
+                    'slug' => 'reviva.admin',
+                    'created_at' => date_create()],
+
+            )
+        );
+        DB::table('admin_user_permissions')->insert(//Insert into admin_user_permissions table
+            array(
+                ['user_id' => '3',
+                    'permission_id' => '2',
+                    'created_at' => date_create()],
+                ['user_id' => '3',
+                    'permission_id' => '3',
+                    'created_at' => date_create()],
+                ['user_id' => '3',
+                    'permission_id' => '4',
+                    'created_at' => date_create()],
+                ['user_id' => '3',
+                    'permission_id' => '7',
+                    'created_at' => date_create()],
+                ['user_id' => '3',
+                    'permission_id' => '8',
+                    'created_at' => date_create()],
+                ['user_id' => '3',
+                    'permission_id' => '9',
+                    'created_at' => date_create()],
+                ['user_id' => '3',
+                    'permission_id' => '10',
+                    'created_at' => date_create()],
+            )
+        );
+
 
     }
 

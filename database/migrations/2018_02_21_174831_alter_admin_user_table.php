@@ -15,7 +15,7 @@ class AlterAdminUserTable extends Migration
     {
         Schema::table('admin_users', function (Blueprint $table) {
             $table->string('name')->nullable()->change();
-            //$table->string('remember_token', 4294967295)->change();
+            $table->string('remember_token', 255)->change();//old 4294967295
         });
     }
 
