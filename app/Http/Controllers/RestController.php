@@ -407,6 +407,26 @@ class RestController extends ApiController
             $table_data = DB::table('invoice')->get();
             $records = [];
             foreach ($table_data as $data) {
+                $items_data = DB::table('invoice_items')->where('invoice_id', '=', $data->id)->get();;
+                $record_item = [];
+                foreach ($items_data as $item) {
+                    $record_item[] = array(
+                        'id' => $item->id,
+                        //'invoice_id' => $item->invoice_id,
+                        'item_id' => $item->item_id,
+                        'qty' => $item->qty,
+                        'unit_price' => $item->unit_price,
+                        'total_price' => $item->total_price,
+                        'discount_rate' => $item->discount_rate,
+                        'discount_amount' => $item->discount_amount,
+                        'net_price' => $item->net_price,
+                        'package_id' => $item->package_id,
+                        'free_items' => $item->free_items,
+                        'status' => $item->status,
+                        'created_at' => $item->created_at,
+                        'updated_at' => $item->updated_at,
+                    );
+                }
                 $records[] = array(
                     'id' => $data->id,
                     'invoice_id' => $data->invoice_id,
@@ -414,6 +434,7 @@ class RestController extends ApiController
                     'gross_amount' => $data->gross_amount,
                     'discount' => $data->discount,
                     'net_amount' => $data->net_amount,
+                    "items" => $record_item,
                 );
             }
 
